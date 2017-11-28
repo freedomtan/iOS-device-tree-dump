@@ -4,9 +4,10 @@
 // 2. remove img3 stuff: device tree files are in im4p nowadays
 
 #include <fcntl.h>
+#include <stdint.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
 #include <unistd.h>
@@ -31,7 +32,7 @@ uint32_t dumpTreeNode(DeviceTreeNode *Node, int indent)
 {
     char buffer[81920];
     char temp[10240];
-    char h_temp[40960];
+    char h_temp[49152];
     char *name;
     
     int prop = 0, child = 0;
