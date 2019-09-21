@@ -30,7 +30,7 @@ void copyValue (char *dest, char *src, int length)
 
 uint32_t dumpTreeNode(DeviceTreeNode *Node, int indent)
 {
-    char buffer[81920];
+    char buffer[102400];
     char temp[10240];
     char h_temp[49152];
     char *name;
