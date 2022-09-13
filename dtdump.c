@@ -30,14 +30,14 @@ void copyValue (char *dest, char *src, int length)
 
 uint32_t dumpTreeNode(DeviceTreeNode *Node, int indent)
 {
-    char buffer[102400];
-    char temp[10240];
-    char h_temp[49152];
+    char buffer[819200];
+    char temp[409600];
+    char h_temp[81920];
     char *name;
     
     int prop = 0, child = 0;
     int i = 0;
-    memset(buffer, '\0', 4096);
+    memset(buffer, '\0', 819200);
     
     DeviceTreeNodeProperty *dtp = (DeviceTreeNodeProperty * ) ((char*)Node + sizeof(DeviceTreeNode));
     
@@ -70,8 +70,7 @@ uint32_t dumpTreeNode(DeviceTreeNode *Node, int indent)
                     hex += 5; // len(" 0x??") = 5
                 }
             }
-            
-            strcat(buffer, temp);
+            strncat(buffer, temp, real_len);
             if (verbose)
                 strcat(buffer, h_temp);
             strcat(buffer, "\n");
